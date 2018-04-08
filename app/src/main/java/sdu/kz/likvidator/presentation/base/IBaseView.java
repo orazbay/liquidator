@@ -8,4 +8,5 @@ import com.arellomobile.mvp.MvpView;
 
 public interface IBaseView extends MvpView {
     public void showError(String message);
+    public void showServerError();
 }

@@ -16,17 +16,25 @@ import sdu.kz.likvidator.utils.GsonUtils;
  */
 
 public class BasePresenter<View extends IBaseView> extends MvpPresenter<View> {
-    public void handleBasicErrors(Throwable error) throws IOException {
+    public void handleBasicErrors(Throwable error) {
             Log.e("handleBasicErrors",error.toString());
             if(error instanceof HttpException) {
-                HttpException ex = (HttpException) error;
-                String errorBody = ex.response().errorBody().string();
+                try {
+                    getViewState().showError(getErrorMessage((HttpException) error));
+                }catch (Exception exception){
+                    exception.printStackTrace();
+                    getViewState().showServerError();
+                }
 
-                getViewState().showError(GsonUtils.toObject(errorBody,LoginError.class).message);
 
             }else {
                 error.printStackTrace();
             }
+
+    }
+    public String getErrorMessage(HttpException exception) throws IOException {
+        String errorBody = exception.response().errorBody().string();
+        return GsonUtils.toObject(errorBody,LoginError.class).message;
 
     }
 }

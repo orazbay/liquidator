@@ -1,8 +1,10 @@
 package sdu.kz.likvidator.presentation.base.baseFragment;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import android.widget.Toast;
 import com.arellomobile.mvp.MvpAppCompatFragment;
 
 import butterknife.ButterKnife;
+import sdu.kz.likvidator.R;
 import sdu.kz.likvidator.utils.ToastUtils;
 
 /**
@@ -35,5 +38,21 @@ public class BaseFragment extends MvpAppCompatFragment implements IBaseFragment 
     @Override
     public void showError(String message) {
         ToastUtils.showToast(getContext(),message);
+    }
+
+    @Override
+    public void showServerError() {
+        AlertDialog.Builder builder=new AlertDialog.Builder(getContext());
+        builder.
+                setCancelable(false).
+                setMessage(R.string.server_error).
+                setPositiveButton(
+                        android.R.string.ok,
+                        (dialogInterface, i) -> {
+                            dialogInterface.cancel();
+                            getActivity().finish();
+                        }
+                ).
+                show();
     }
 }

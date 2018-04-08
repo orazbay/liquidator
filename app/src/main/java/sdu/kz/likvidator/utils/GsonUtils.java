@@ -1,5 +1,7 @@
 package sdu.kz.likvidator.utils;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 
 /**
@@ -8,6 +10,7 @@ import com.google.gson.Gson;
 
 public class GsonUtils {
     public static <T> T toObject(String json,Class<T> tClass){
+        Log.e("toObject",json);
         return new Gson().fromJson(json,tClass);
     }
 }

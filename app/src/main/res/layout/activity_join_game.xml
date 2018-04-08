@@ -4,15 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="sdu.kz.likvidator.MainActivity">
-
+    tools:context="sdu.kz.likvidator.presentation.startGame.joinGame.JoinGameActivity">
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/fmt_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <fragment
             android:id="@+id/fragment"
-            class="sdu.kz.likvidator.presentation.game.view.GameFragment"
+            class="sdu.kz.likvidator.presentation.startGame.joinGame.JoinGameFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 

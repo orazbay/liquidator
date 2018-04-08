@@ -1,15 +1,15 @@
-package sdu.kz.likvidator;
+package sdu.kz.likvidator.presentation.startGame.joinGame;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import sdu.kz.likvidator.R;
 
+public class JoinGameActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_join_game);
     }
 }

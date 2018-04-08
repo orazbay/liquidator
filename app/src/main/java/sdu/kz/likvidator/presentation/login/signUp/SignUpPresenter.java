@@ -3,16 +3,11 @@ package sdu.kz.likvidator.presentation.login.signUp;
 import android.util.Log;
 
 import com.arellomobile.mvp.InjectViewState;
-import com.arellomobile.mvp.MvpPresenter;
-import com.google.gson.Gson;
 
-import java.io.IOException;
-
-import retrofit2.HttpException;
 import sdu.kz.likvidator.data.network.RetrofitHelper;
-import sdu.kz.likvidator.data.network.login.LoginError;
-import sdu.kz.likvidator.data.network.login.LoginService;
+import sdu.kz.likvidator.data.prefs.PreferencesHelper;
 import sdu.kz.likvidator.presentation.base.BasePresenter;
+import sdu.kz.likvidator.presentation.login.LoginPresenter;
 import sdu.kz.likvidator.utils.RxUtils;
 
 /**
@@ -20,7 +15,7 @@ import sdu.kz.likvidator.utils.RxUtils;
  */
 
 @InjectViewState
-public class SignUpPresenter extends BasePresenter<ISignUpView> {
+public class SignUpPresenter extends LoginPresenter {
     public void signUp(String name,
                        String surname,
                        String email,
@@ -37,6 +32,8 @@ public class SignUpPresenter extends BasePresenter<ISignUpView> {
                 subscribe(
                         response->{
                             Log.e("responseString",response.message);
+                            PreferencesHelper.INSTANCE.saveToken(response.token);
+                            goToMain();
                         },
                         this::handleBasicErrors
                         );

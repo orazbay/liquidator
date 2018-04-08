@@ -26,7 +26,7 @@ public class PreferencesHelper implements IPreferencesHelper {
 
     @Override
     public void saveToken(String token) {
-        saveString(PREF_KEY_TOKEN, token);
+        saveString(PREF_KEY_TOKEN,"Bearer "+ token);
     }
 
     @Override

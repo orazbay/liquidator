@@ -7,18 +7,26 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.arellomobile.mvp.presenter.InjectPresenter;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import sdu.kz.likvidator.R;
 import sdu.kz.likvidator.presentation.base.baseFragment.BaseFragment;
+import sdu.kz.likvidator.presentation.login.ILoginView;
+import sdu.kz.likvidator.presentation.login.LoginActivity;
+import sdu.kz.likvidator.utils.ActivityUtils;
+
+import static sdu.kz.likvidator.utils.StringUtils.isNotEmpty;
 
 /**
  * Created by orazbay on 4/4/18.
  */
 
-public class SignUpFragment extends BaseFragment implements ISignUpView  {
+public class SignUpFragment extends BaseFragment implements ISignUpView {
 
 
     @InjectPresenter
@@ -37,10 +45,11 @@ public class SignUpFragment extends BaseFragment implements ISignUpView  {
 
     @BindView(R.id.sign_up_btn)
     Button signUp;
+    @BindView(R.id.link_sign_in)
+    TextView linkSignIn;
 
 
-
-    public SignUpFragment(){
+    public SignUpFragment() {
         setViewId(R.layout.fragment_sign_up);
     }
 
@@ -52,8 +61,8 @@ public class SignUpFragment extends BaseFragment implements ISignUpView  {
         setupInputs();
 
         signUp.setOnClickListener(
-                v->{
-                    if (isAllInputsFilled()&&isPasswordsSame()){
+                v -> {
+                    if (isAllInputsFilled() && isPasswordsSame()) {
                         presenter.signUp(
                                 nameEdittext.getText().toString(),
                                 surnameEdittext.getText().toString(),
@@ -61,32 +70,43 @@ public class SignUpFragment extends BaseFragment implements ISignUpView  {
                                 passwordEdittext.getText().toString()
                         );
 
-            }
+                    }
 
-        });
+                });
+
+        linkSignIn.setOnClickListener(
+                v->{
+                    ((LoginActivity)getActivity()).changePage(0);
+                }
+        );
         return view;
     }
 
-    private void setupInputs(){
+    private void setupInputs() {
 
     }
-    private boolean isAllInputsFilled(){
-        return isNotEmpty(nameEdittext.getText().toString())&&
-                isNotEmpty(surnameEdittext.getText().toString())&&
-                isNotEmpty(emailEdittext.getText().toString())&&
-                isNotEmpty(passwordEdittext.getText().toString())&&
+
+    private boolean isAllInputsFilled() {
+        return isNotEmpty(nameEdittext.getText().toString()) &&
+                isNotEmpty(surnameEdittext.getText().toString()) &&
+                isNotEmpty(emailEdittext.getText().toString()) &&
+                isNotEmpty(passwordEdittext.getText().toString()) &&
                 isNotEmpty(passwordEdittext1.getText().toString());
 
     }
-    private boolean isPasswordsSame(){
-        if (isNotEmpty(passwordEdittext.getText().toString())&&isNotEmpty(passwordEdittext1.getText().toString())){
-            if (passwordEdittext.getText().toString().equals(passwordEdittext1.getText().toString())){
+
+    private boolean isPasswordsSame() {
+        if (isNotEmpty(passwordEdittext.getText().toString()) && isNotEmpty(passwordEdittext1.getText().toString())) {
+            if (passwordEdittext.getText().toString().equals(passwordEdittext1.getText().toString())) {
                 return true;
             }
         }
         return false;
     }
-    private boolean isNotEmpty(String text){
-        return text!=null&&text.length()>0;
+
+
+    @Override
+    public void goToActivity(Class<?> activityClass) {
+        ActivityUtils.startActivity(getActivity(),activityClass,true);
     }
 }

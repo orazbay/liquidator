@@ -9,7 +9,7 @@
 
     <Button
 
-        android:id="@+id/idEt"
+        android:id="@+id/createGameBtn"
         android:layout_width="309dp"
         android:layout_height="40dp"
         android:layout_marginBottom="8dp"
@@ -20,7 +20,7 @@
         android:textColor="#ffffff"
         android:textSize="15sp"
         android:textAllCaps="false"
-        android:text="Create game"
+        android:text="@string/create_game"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -29,23 +29,23 @@
         app:layout_constraintVertical_bias="0.75" />
 
     <Button
-        android:id="@+id/nextBtn"
+        android:id="@+id/joinGameBtn"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:textAllCaps="false"
-        android:text="Join game"
+        android:text="@string/join_game"
         android:textColor="#ffffff"
         android:background="@drawable/bg_btn"
-        app:layout_constraintEnd_toEndOf="@+id/idEt"
-        app:layout_constraintStart_toStartOf="@+id/idEt"
-        app:layout_constraintTop_toBottomOf="@+id/idEt" />
+        app:layout_constraintEnd_toEndOf="@+id/createGameBtn"
+        app:layout_constraintStart_toStartOf="@+id/createGameBtn"
+        app:layout_constraintTop_toBottomOf="@+id/createGameBtn" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/idEt"
+        app:layout_constraintBottom_toTopOf="@+id/createGameBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

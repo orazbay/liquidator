@@ -27,6 +27,9 @@ android {
 }
 
 dependencies {
+
+    implementation 'com.android.support:design:26.1.0'
+
     //image
     compile 'com.github.siyamed:android-shape-imageview:0.9.3'
     compile 'com.squareup.picasso:picasso:2.5.2'
