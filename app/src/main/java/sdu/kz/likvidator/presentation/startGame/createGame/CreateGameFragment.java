@@ -10,10 +10,9 @@ import android.widget.EditText;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 import sdu.kz.likvidator.R;
 import sdu.kz.likvidator.presentation.base.baseFragment.BaseFragment;
+
 import sdu.kz.likvidator.utils.StringUtils;
 
 /**
@@ -48,6 +47,5 @@ public class CreateGameFragment extends BaseFragment implements ICreateGameView 
         );
         return view;
     }
-
 
 }

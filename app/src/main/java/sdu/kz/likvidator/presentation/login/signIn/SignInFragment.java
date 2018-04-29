@@ -73,8 +73,5 @@ public class SignInFragment extends BaseFragment implements ISignInView {
     }
 
 
-    @Override
-    public void goToActivity(Class<?> activityClass) {
-        ActivityUtils.startActivity(getActivity(),activityClass,true);
-    }
+
 }

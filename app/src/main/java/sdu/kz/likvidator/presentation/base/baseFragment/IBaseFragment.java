@@ -2,6 +2,8 @@ package sdu.kz.likvidator.presentation.base.baseFragment;
 
 import com.arellomobile.mvp.MvpView;
 
+import java.io.Serializable;
+
 import sdu.kz.likvidator.presentation.base.IBaseView;
 
 /**

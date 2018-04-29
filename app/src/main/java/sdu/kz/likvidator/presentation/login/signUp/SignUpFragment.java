@@ -103,10 +103,4 @@ public class SignUpFragment extends BaseFragment implements ISignUpView {
         }
         return false;
     }
-
-
-    @Override
-    public void goToActivity(Class<?> activityClass) {
-        ActivityUtils.startActivity(getActivity(),activityClass,true);
-    }
 }

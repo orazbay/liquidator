@@ -102,7 +102,12 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.811" />
+                app:layout_constraintVertical_bias="0.811"
+                android:shadowColor="@android:color/black"
+                android:shadowDx="7"
+                android:shadowDy="7"
+                android:shadowRadius="7"
+                android:typeface="sans"/>
         </android.support.constraint.ConstraintLayout>
 
 

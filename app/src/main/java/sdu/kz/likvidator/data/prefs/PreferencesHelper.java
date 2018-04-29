@@ -30,6 +30,11 @@ public class PreferencesHelper implements IPreferencesHelper {
     }
 
     @Override
+    public void removeToken() {
+        removeKey(PREF_KEY_TOKEN);
+    }
+
+    @Override
     public String getToken() {
         return getString(PREF_KEY_TOKEN);
     }

@@ -6,9 +6,7 @@ import com.arellomobile.mvp.InjectViewState;
 
 import sdu.kz.likvidator.data.network.RetrofitHelper;
 import sdu.kz.likvidator.data.prefs.PreferencesHelper;
-import sdu.kz.likvidator.presentation.base.BasePresenter;
-import sdu.kz.likvidator.presentation.login.LoginPresenter;
-import sdu.kz.likvidator.presentation.login.signUp.ISignUpView;
+import sdu.kz.likvidator.presentation.initialRouter.InitialRouterPresenter;
 import sdu.kz.likvidator.utils.RxUtils;
 
 /**
@@ -16,7 +14,7 @@ import sdu.kz.likvidator.utils.RxUtils;
  */
 
 @InjectViewState
-public class SignInPresenter extends LoginPresenter {
+public class SignInPresenter extends InitialRouterPresenter {
     public void signIn(String email,
                        String password){
         Log.e("signUp","called");

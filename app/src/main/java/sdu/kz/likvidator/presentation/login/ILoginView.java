@@ -9,5 +9,5 @@ import sdu.kz.likvidator.presentation.base.IBaseView;
  */
 
 public interface ILoginView  extends IBaseView{
-    public void goToActivity(Class<?> activityClass);
+
 }

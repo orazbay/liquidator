@@ -17,6 +17,20 @@
     <string name="create_game">Create game</string>
     <string name="join_game">Join game</string>
     <string name="game_name">Name of game</string>
-
+    <string name="start_game">Start game</string>
+    <string name="finish_game">Finish game</string>
+    <string name="user_verified">User verified</string>
+    <string name="accept">Accept</string>
+    <string name="reject">Reject</string>
+    <string name="delete_game"><u>Delete game</u></string>
+    <string name="log_out">Log out</string>
+    <string name="game_code">Game code</string>
+    <string name="text_wait_accepted">You are not accepted to game yet\n Please wait response of host </string>
+    <string name="text_wait_started">You are accepted to game,\n but game is not started yet\n Please wait the start of game </string>
+    <string name="join_game_refresh">Please click refresh button\n or \n pull down \n to check response</string>
+    <string name="refresh">refresh</string>
     <string name="server_error">Sorry,some server error occurred</string>
+    <string name="join_game_rejected_dialog_message">You request to join game rejected</string>
+    <string name="alive">Alive</string>
+    <string name="died">Died</string>
 </resources>

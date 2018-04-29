@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recylerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </android.support.v7.widget.RecyclerView>
+    <EditText
+        android:id="@+id/game_code_et"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/game_code"
+        android:gravity="center"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:theme="@style/editTextTheme"
+        android:layout_centerInParent="true"/>
+    <Button
+        android:id="@+id/joinGameBtn"
+        android:layout_below="@id/game_code_et"
+        android:layout_centerHorizontal="true"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/join_game"/>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

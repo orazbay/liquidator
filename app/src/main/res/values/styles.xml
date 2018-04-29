@@ -3,15 +3,30 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/primary_material_dark</item>
+        <item name="colorPrimaryDark">@color/primary_dark_material_dark</item>
+        <item name="colorAccent">@color/primary_material_dark</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="editTextTheme" parent="Widget.AppCompat.EditText">
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColor">#fff</item>
+        <item name="colorPrimary">#ffffff</item>
+        <item name="android:textColorHint">#b9b9b9</item>
+        <item name="colorControlNormal">#b9b9b9</item>
+        <item name="colorControlActivated">#fff</item>
+        <item name="colorControlHighlight">#fff</item>
+    </style>
+    <style name="HintAppearance.Primary" parent="TextAppearance.Design.Hint">
+        <item name="android:textColor">#fcfafa</item>
     </style>
 
 
     <style name="signUpEdittext">
         <item name="android:textSize">15sp</item>
         <item name="android:gravity">center</item>
+        <item name="android:textCursorDrawable">@null</item>
         <item name="android:layout_gravity">center_horizontal</item>
         <item name="android:layout_centerHorizontal">true</item>
         <item name="android:layout_height">wrap_content</item>
@@ -19,6 +34,7 @@
         <item name="android:singleLine">true</item>
         <item name="android:focusable">true</item>
         <item name="android:maxLines">1</item>
+        <item name="android:theme">@style/editTextTheme</item>
     </style>
     <style name="titleLogin">
         <item name="android:textSize">25sp</item>
@@ -26,9 +42,15 @@
         <item name="android:layout_marginBottom">50dp</item>
         <item name="android:layout_marginTop">25dp</item>
     </style>
+    <style name="requestedUsersText">
+        <item name="android:textSize">15sp</item>
+    </style>
 
     <style name="SplashTheme" parent="AppTheme">
         <item name="android:windowBackground">@drawable/background_layer</item>
+    </style>
+    <style name="ThemeNightCityBg" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/login_bg</item>
     </style>
 
 </resources>

@@ -7,23 +7,33 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+
+import com.arellomobile.mvp.presenter.InjectPresenter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import sdu.kz.likvidator.R;
 import sdu.kz.likvidator.presentation.base.baseFragment.BaseFragment;
-import sdu.kz.likvidator.presentation.listOfGames.ListOfGamesAdapter;
+
+import sdu.kz.likvidator.utils.StringUtils;
 
 /**
  * Created by orazbay on 4/7/18.
  */
 
-public class JoinGameFragment extends BaseFragment {
+public class JoinGameFragment extends BaseFragment implements IJoinGameView{
+
+    @InjectPresenter
+    JoinGamePresenter presenter;
 
 
-    @BindView(R.id.recylerView)
-    RecyclerView recylerView;
+    @BindView(R.id.game_code_et)
+    EditText game_code_et;
+    @BindView(R.id.joinGameBtn)
+    Button joinGameBtn;
 
     public JoinGameFragment() {
         setViewId(R.layout.fragment_join_game);
@@ -34,18 +44,11 @@ public class JoinGameFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
 
-        setupRecylerView();
-
+        joinGameBtn.setOnClickListener(v->{
+            if (StringUtils.isNotEmpty(game_code_et.getText().toString())){
+                presenter.joinGame(game_code_et.getText().toString());
+            }
+        });
         return view;
-    }
-    private void setupRecylerView(){
-        recylerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
-        ListOfGamesAdapter listOfGamesAdapter=new ListOfGamesAdapter();
-        recylerView.setAdapter(listOfGamesAdapter);
-        listOfGamesAdapter.init(getMvpDelegate(),getId());
-
-
-
     }
 }

@@ -1,5 +1,6 @@
 package sdu.kz.likvidator.presentation.startGame.createGame;
 
+import sdu.kz.likvidator.data.network.game.CreateGameResponse;
 import sdu.kz.likvidator.presentation.base.IBaseView;
 
 /**

@@ -3,8 +3,10 @@ package sdu.kz.likvidator.presentation.startGame.createGame;
 import com.arellomobile.mvp.InjectViewState;
 
 import sdu.kz.likvidator.data.network.RetrofitHelper;
+import sdu.kz.likvidator.data.network.base.BaseResponse;
 import sdu.kz.likvidator.data.prefs.PreferencesHelper;
 import sdu.kz.likvidator.presentation.base.BasePresenter;
+import sdu.kz.likvidator.presentation.startGame.createGame.hostGame.HostGameActivity;
 import sdu.kz.likvidator.utils.RxUtils;
 
 /**
@@ -24,6 +26,12 @@ public class CreateGamePresenter extends BasePresenter<ICreateGameView> {
                 .compose(RxUtils.applySchedulers())
                 .subscribe(
                         response->{
+                            if (response.message.equals(BaseResponse.MESSAGE_SUCCESS)){
+//                                GetGameResponse getGameResponse=new GetGameResponse();
+//                                getGameResponse.game=response;
+                                getViewState().finishActivity();
+                                getViewState().startActivityWithIntent(HostGameActivity.class,response);
+                            }
 
                         },
                         this::handleBasicErrors
