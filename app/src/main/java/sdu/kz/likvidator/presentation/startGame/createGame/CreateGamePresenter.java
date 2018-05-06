@@ -18,6 +18,7 @@ import sdu.kz.likvidator.utils.RxUtils;
 public class CreateGamePresenter extends BasePresenter<ICreateGameView> {
 
     public void createGame(String title){
+        getViewState().showProgress();
         RetrofitHelper.getGameService()
                 .createGame(
                         PreferencesHelper.INSTANCE.getToken(),
@@ -26,6 +27,7 @@ public class CreateGamePresenter extends BasePresenter<ICreateGameView> {
                 .compose(RxUtils.applySchedulers())
                 .subscribe(
                         response->{
+                            getViewState().hideProgress();
                             if (response.message.equals(BaseResponse.MESSAGE_SUCCESS)){
 //                                GetGameResponse getGameResponse=new GetGameResponse();
 //                                getGameResponse.game=response;
@@ -34,7 +36,10 @@ public class CreateGamePresenter extends BasePresenter<ICreateGameView> {
                             }
 
                         },
-                        this::handleBasicErrors
+                        error->{
+                            getViewState().hideProgress();
+                            handleBasicErrors(error);
+                        }
                 );
     }
 }

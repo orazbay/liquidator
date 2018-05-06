@@ -22,7 +22,7 @@ import sdu.kz.likvidator.data.network.login.LoginService;
  */
 
 public class RetrofitHelper {
-    public static String BASE_URL="http://35.187.6.231/api/";
+    public static String BASE_URL="http://liquid.tryfcomet.com/qe/public/api/";
 
     private static Retrofit retrofit;
 

@@ -3,8 +3,9 @@
     package="sdu.kz.likvidator">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
@@ -52,14 +53,15 @@
         <activity
             android:name=".presentation.startGame.joinGame.waitJoinedGame.WaitJoinedGameActivity"
             android:theme="@style/ThemeNightCityBg" />
-        <activity android:name=".presentation.profile.ProfileActivity"
+        <activity
+            android:name=".presentation.profile.ProfileActivity"
+            android:theme="@style/ThemeNightCityBg"></activity>
+        <activity android:name=".presentation.profile.AvatarActivity" />
+        <activity android:name=".presentation.startGame.joinGame.startJoinedGame.StartJoinedGameActivity"
             android:theme="@style/ThemeNightCityBg">
 
 
         </activity>
-        <activity android:name="me.iwf.photopicker.PhotoPickerActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            />
     </application>
 
 </manifest>

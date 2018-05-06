@@ -8,6 +8,7 @@ import sdu.kz.likvidator.data.network.game.GetGameResponse;
 import sdu.kz.likvidator.data.prefs.PreferencesHelper;
 import sdu.kz.likvidator.presentation.base.BasePresenter;
 
+import sdu.kz.likvidator.presentation.startGame.joinGame.startJoinedGame.StartJoinedGameActivity;
 import sdu.kz.likvidator.utils.RxUtils;
 
 @InjectViewState
@@ -43,6 +44,7 @@ public class WaitJoinedGamePresenter extends BasePresenter<IWaitJoinedGameView> 
                                                 getViewState().showWaitWhileStartText();
                                             }else {
                                                 //go to game and show his victim and so on
+                                                getViewState().goToActivity(StartJoinedGameActivity.class);
                                             }
                                         }
 

@@ -19,6 +19,7 @@ public class SignUpPresenter extends InitialRouterPresenter {
                        String surname,
                        String email,
                        String password){
+        getViewState().showProgress();
         Log.e("signUp","called");
 
         RetrofitHelper.getLoginService().register(
@@ -34,7 +35,11 @@ public class SignUpPresenter extends InitialRouterPresenter {
                             PreferencesHelper.INSTANCE.saveToken(response.token);
                             goToMain();
                         },
-                        this::handleBasicErrors
+
+                        error->{
+                            getViewState().hideProgress();
+                            handleBasicErrors(error);
+                        }
                         );
 
     }

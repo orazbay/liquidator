@@ -85,6 +85,7 @@ public class HostGameFragment extends BaseFragment implements IHostGameView {
         );
         startButton.setOnClickListener(
                 v -> {
+                    presenter.startGame();
 
                 }
         );
@@ -126,6 +127,7 @@ public class HostGameFragment extends BaseFragment implements IHostGameView {
     public void setListData(ArrayList<User> users) {
         Log.e("usersAdapter", users.size() + "");
         adapter.setData(users,started);
+
     }
 
     @Override

@@ -2,10 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:title="@string/profile"
+        android:id="@+id/item_profile"
+        android:icon="@drawable/ic_account_box_black_24dp"
+        app:showAsAction="always"
+        />
+    <item
         android:title="@string/log_out"
         android:id="@+id/item_log_out"
         android:icon="@drawable/ic_exit_to_app_24dp"
         app:showAsAction="always"
         />
+
 
 </menu>

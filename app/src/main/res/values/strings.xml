@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Likvidator</string>
-    <string name="i_was_killed">I was killed</string>
-    <string name="i_killed">I killed</string>
+    <string name="app_name">Liquidator</string>
+    <string name="kill_victim">Kill victim</string>
+    <string name="i_am_corpse">I am corpse</string>
 
     <string name="name">Name</string>
     <string name="surname">Surname</string>
@@ -33,4 +33,16 @@
     <string name="join_game_rejected_dialog_message">You request to join game rejected</string>
     <string name="alive">Alive</string>
     <string name="died">Died</string>
+    <string name="profile">Profile</string>
+    <string name="user_name">Name:</string>
+    <string name="user_surname">Surname:</string>
+    <string name="user_email">Email</string>
+    <string name="show_photo">Show photo</string>
+    <string name="set_photo">Set photo</string>
+    <string name="profile_photo">Profile photo</string>
+    <string name="profile_photo_transition">profile_photo_transition</string>
+    <string name="on_permissions_cancelled">This application needs these permissions. \n You must provide them in the settings of the application to continue.</string>
+    <string name="victim_title">Your victim:</string>
+    <string name="verify_user">Verify</string>
+
 </resources>

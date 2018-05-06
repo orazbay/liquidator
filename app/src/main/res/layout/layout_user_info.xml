@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/game_info_container"
+    android:orientation="vertical"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:text="@string/user_name"/>
+    <TextView
+        android:id="@+id/userNameTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="7"
+        android:shadowDy="7"
+        android:shadowRadius="7"
+        android:typeface="sans"
+
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/user_surname"
+        android:textSize="15sp"/>
+    <TextView
+        android:id="@+id/userSurnameTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:textStyle="bold|italic"
+        android:gravity="center"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="7"
+        android:shadowDy="7"
+        android:shadowRadius="7"
+        android:typeface="sans"
+
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/user_email"
+        android:textSize="15sp"/>
+    <TextView
+        android:id="@+id/userEmailTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:textStyle="bold|italic"
+        android:gravity="center"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="7"
+        android:shadowDy="7"
+        android:shadowRadius="7"
+        android:typeface="sans"
+
+        />
+
+</LinearLayout>

@@ -10,9 +10,14 @@ import java.io.Serializable;
 
 public interface IBaseView extends MvpView {
     public void showError(String message);
+    public void showErrorDialog(String errorMessage);
     public void showServerError();
     public void goToActivity(Class<?> activityClass);
     public void startActivityWithIntent(Class<?> activityClass,Serializable serializableData);
     public void finishActivity();
+
+
+    public void showProgress();
+    public void hideProgress();
 
 }

@@ -76,7 +76,7 @@ public class ListOfUsersItemViewHolder extends RecyclerView.ViewHolder {
                                     userStatusTv.setText(R.string.user_verified);
                                 }
                             }
-                            );
+                    );
                 }
         );
         rejectButton.setOnClickListener(

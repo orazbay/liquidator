@@ -130,4 +130,5 @@ public class WaitJoinedGameFragment extends BaseFragment implements IWaitJoinedG
     public void hideRefreshProgress() {
         refreshLayout.setRefreshing(false);
     }
+
 }

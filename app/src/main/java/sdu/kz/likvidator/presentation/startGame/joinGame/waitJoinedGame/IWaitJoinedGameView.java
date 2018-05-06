@@ -10,11 +10,15 @@ public interface IWaitJoinedGameView extends IBaseView {
     public void onRequestToJoinGameRejected();
     public void showRejectedDialog();
 
+
+
     public void showWaitWhileAcceptText();
     public void showWaitWhileStartText();
 
     public void showRefreshProgress();
     public void hideRefreshProgress();
+
+
 
 
 }

@@ -61,6 +61,11 @@ public class HostGamePresenter extends BasePresenter<IHostGameView> {
                 .compose(RxUtils.applySchedulers())
                 .subscribe(
                         response->{
+                            if (response.isSuccess()){
+                                getGame();
+                            }else {
+                                getViewState().showErrorDialog(response.message);
+                            }
 
                         },
                         Throwable::printStackTrace

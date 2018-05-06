@@ -17,6 +17,7 @@ import sdu.kz.likvidator.utils.RxUtils;
 public class SignInPresenter extends InitialRouterPresenter {
     public void signIn(String email,
                        String password){
+        getViewState().showProgress();
         Log.e("signUp","called");
 
         RetrofitHelper.getLoginService().login(
@@ -25,11 +26,15 @@ public class SignInPresenter extends InitialRouterPresenter {
         ).compose(RxUtils.applySchedulers()).
                 subscribe(
                         response->{
+                            getViewState().hideProgress();
                             Log.e("responseString",response.message);
                             PreferencesHelper.INSTANCE.saveToken(response.token);
                             goToMain();
                         },
-                        this::handleBasicErrors
+                        error->{
+                            getViewState().hideProgress();
+                            handleBasicErrors(error);
+                        }
                         );
     }
 

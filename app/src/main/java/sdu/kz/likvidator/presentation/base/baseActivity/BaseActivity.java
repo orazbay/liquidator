@@ -16,6 +16,7 @@ import butterknife.ButterKnife;
 import sdu.kz.likvidator.R;
 import sdu.kz.likvidator.data.prefs.PreferencesHelper;
 import sdu.kz.likvidator.presentation.login.LoginActivity;
+import sdu.kz.likvidator.presentation.profile.ProfileActivity;
 import sdu.kz.likvidator.utils.ActivityUtils;
 
 /**
@@ -53,6 +54,9 @@ public class BaseActivity extends MvpAppCompatActivity{
             case R.id.item_log_out:
                 PreferencesHelper.INSTANCE.removeToken();
                 ActivityUtils.startActivity(this, LoginActivity.class,true);
+                break;
+            case R.id.item_profile:
+                ActivityUtils.startActivity(this, ProfileActivity.class,false);
                 break;
         }
         return super.onOptionsItemSelected(item);
