@@ -68,7 +68,9 @@ public class HostGamePresenter extends BasePresenter<IHostGameView> {
                             }
 
                         },
-                        Throwable::printStackTrace
+                        error->{
+                            getViewState().showErrorDialog("You must have at least 3 users");
+                        }
                 );
     }
     public void finishGame(){

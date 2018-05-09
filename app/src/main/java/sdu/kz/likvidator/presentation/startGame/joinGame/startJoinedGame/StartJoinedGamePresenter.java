@@ -67,6 +67,14 @@ public class StartJoinedGamePresenter extends BasePresenter<IStartJoinedGameView
                             setVictim();
                         },
                         Throwable::printStackTrace
+//                        error->{
+//                            getViewState().stopCamera();
+//
+//                            getViewState().showErrorDialog("You killed your victim,get next one");
+//                            this.victim=new User("Rashid","Raimov","fd","r1@r.r");
+//                            this.venom="fdfd";
+//                            show();
+//                        }
 
                 );
 

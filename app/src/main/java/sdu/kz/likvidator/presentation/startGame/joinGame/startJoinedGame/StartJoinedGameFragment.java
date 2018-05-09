@@ -167,6 +167,7 @@ public class StartJoinedGameFragment extends BaseFragment implements IStartJoine
                     new Handler().postDelayed(() -> {
                         presenter.setVictim();
                     },5000);
+
                 })
                 .create().show();
     }
